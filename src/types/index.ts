@@ -29,7 +29,7 @@ export interface CartStore {
   totalPrice: () => number
 }
 
-export type Language = 'en' | 'fr'
+export type Language = 'en' | 'fr' | 'de' | 'it' | 'es' | 'sv'
 
 export interface LanguageContextType {
   language: Language
