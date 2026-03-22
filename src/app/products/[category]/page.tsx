@@ -1,36 +1,21 @@
 'use client'
 
 import { notFound } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { getCategoryProducts, categoryLabels } from '@/data/products'
-import { Category } from '@/types'
+import { getProductsByCategory } from '@/lib/shopify'
+import { Category, Product } from '@/types'
+import { categoryLabels } from '@/data/products'
 import ProductGrid from '@/components/ProductGrid'
 import { useLanguage } from '@/context/LanguageContext'
 
 const VALID_CATEGORIES: Category[] = ['home-decor', 'kitchenware', 'pet-products', 'beauty-self-care']
 
-const categoryMeta: Record<Category, { description: string; emoji: string; color: string }> = {
-  'home-decor': {
-    description: 'Transform your living space with beautiful, functional decor that feels like home.',
-    emoji: '🏠',
-    color: 'from-gray-800 to-black',
-  },
-  'kitchenware': {
-    description: 'Elevate your cooking experience with professional-grade kitchen tools and cookware.',
-    emoji: '🍳',
-    color: 'from-gray-800 to-black',
-  },
-  'pet-products': {
-    description: 'Give your furry family members the comfort and care they deserve.',
-    emoji: '🐾',
-    color: 'from-gray-800 to-black',
-  },
-  'beauty-self-care': {
-    description: 'Invest in yourself with premium beauty and wellness products for daily rituals.',
-    emoji: '✨',
-    color: 'from-gray-800 to-black',
-  },
+const categoryMeta: Record<Category, { description: string; emoji: string }> = {
+  'home-decor': { description: 'Transform your living space with beautiful, functional decor.', emoji: '🏠' },
+  'kitchenware': { description: 'Elevate your cooking with professional-grade tools and cookware.', emoji: '🍳' },
+  'pet-products': { description: 'Give your furry family members the comfort they deserve.', emoji: '🐾' },
+  'beauty-self-care': { description: 'Invest in yourself with premium beauty and wellness products.', emoji: '✨' },
 }
 
 interface CategoryPageProps {
@@ -40,26 +25,30 @@ interface CategoryPageProps {
 export default function CategoryPage({ params }: CategoryPageProps) {
   const { t } = useLanguage()
   const [sort, setSort] = useState('featured')
+  const [products, setProducts] = useState<Product[]>([])
+  const [loading, setLoading] = useState(true)
   const category = params.category as Category
 
-  if (!VALID_CATEGORIES.includes(category)) {
-    notFound()
-  }
+  if (!VALID_CATEGORIES.includes(category)) notFound()
 
   const meta = categoryMeta[category]
   const categoryLabel = categoryLabels[category]
 
-  let categoryProducts = getCategoryProducts(category)
-  if (sort === 'price-asc') categoryProducts = [...categoryProducts].sort((a, b) => a.price - b.price)
-  else if (sort === 'price-desc') categoryProducts = [...categoryProducts].sort((a, b) => b.price - a.price)
-  else if (sort === 'rating') categoryProducts = [...categoryProducts].sort((a, b) => b.rating - a.rating)
+  useEffect(() => {
+    getProductsByCategory(category).then(data => {
+      setProducts(data)
+      setLoading(false)
+    })
+  }, [category])
+
+  let sorted = [...products]
+  if (sort === 'price-asc') sorted.sort((a, b) => a.price - b.price)
+  else if (sort === 'price-desc') sorted.sort((a, b) => b.price - a.price)
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Category Hero */}
-      <div className={`bg-gradient-to-br ${meta.color} text-white`}>
+      <div className="bg-gradient-to-br from-gray-800 to-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-white/70 mb-6">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
@@ -67,7 +56,6 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             <span>/</span>
             <span className="text-white font-medium">{categoryLabel}</span>
           </nav>
-
           <div className="flex items-center gap-4">
             <span className="text-5xl">{meta.emoji}</span>
             <div>
@@ -79,10 +67,9 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Toolbar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 p-4 bg-white rounded-xl border border-gray-100">
           <p className="text-sm text-gray-600">
-            Showing <strong>{categoryProducts.length}</strong> products in {categoryLabel}
+            Showing <strong>{sorted.length}</strong> products in {categoryLabel}
           </p>
           <div className="flex items-center gap-2">
             <label htmlFor="sort" className="text-sm text-gray-600 whitespace-nowrap">Sort by:</label>
@@ -95,14 +82,18 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <option value="featured">Featured</option>
               <option value="price-asc">Price: Low to High</option>
               <option value="price-desc">Price: High to Low</option>
-              <option value="rating">Top Rated</option>
             </select>
           </div>
         </div>
 
-        <ProductGrid products={categoryProducts} emptyMessage="Products coming soon — check back shortly!" />
+        {loading ? (
+          <div className="flex justify-center py-20">
+            <div className="w-8 h-8 border-2 border-black border-t-transparent rounded-full animate-spin" />
+          </div>
+        ) : (
+          <ProductGrid products={sorted} emptyMessage="Products coming soon — check back shortly!" />
+        )}
 
-        {/* Browse other categories */}
         <div className="mt-16 text-center">
           <p className="text-gray-500 mb-4">Looking for something else?</p>
           <Link
