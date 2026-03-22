@@ -40,7 +40,7 @@ export default function SignupPage() {
   }
 
   const inputClass = (name: string) =>
-    `w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all ${
+    `w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black transition-all ${
       errors[name] ? 'border-red-400 bg-red-50' : 'border-gray-200 bg-white'
     }`
 
@@ -52,7 +52,7 @@ export default function SignupPage() {
           {/* Logo */}
           <div className="text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold">A</span>
               </div>
             </Link>
@@ -69,7 +69,7 @@ export default function SignupPage() {
               </div>
               <h2 className="text-xl font-bold text-gray-900 mb-2">Account Created!</h2>
               <p className="text-gray-500 text-sm mb-6">Welcome to Abdallah Store, {form.name.split(' ')[0]}!</p>
-              <Link href="/" className="bg-primary-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors">
+              <Link href="/" className="bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-zinc-800 transition-colors">
                 Start Shopping
               </Link>
             </div>
@@ -141,14 +141,14 @@ export default function SignupPage() {
 
               <button
                 type="submit"
-                className="w-full bg-primary-600 text-white font-semibold py-3.5 rounded-xl hover:bg-primary-700 transition-colors mt-2 text-base"
+                className="w-full bg-black text-white font-semibold py-3.5 rounded-xl hover:bg-zinc-800 transition-colors mt-2 text-base"
               >
                 {t('auth.signupBtn')}
               </button>
 
               <p className="text-center text-sm text-gray-500 mt-4">
                 {t('auth.haveAccount')}{' '}
-                <Link href="/auth/login" className="text-primary-600 font-semibold hover:text-primary-700">
+                <Link href="/auth/login" className="text-black font-semibold hover:text-zinc-700">
                   {t('nav.login')}
                 </Link>
               </p>

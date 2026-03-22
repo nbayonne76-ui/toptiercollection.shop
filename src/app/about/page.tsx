@@ -16,7 +16,7 @@ export default function AboutPage() {
       ),
       title: t('about.quality'),
       text: t('about.qualityText'),
-      color: 'bg-primary-100 text-primary-600',
+      color: 'bg-gray-100 text-gray-700',
     },
     {
       icon: (
@@ -50,10 +50,10 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-700 to-indigo-600 text-white py-20">
+      <section className="bg-black text-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">{t('about.title')}</h1>
-          <p className="text-xl text-primary-200 max-w-2xl mx-auto">
+          <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
             {t('about.missionText')}
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 { value: '30 days', label: 'Return Policy' },
               ].map(stat => (
                 <div key={stat.label} className="bg-gray-50 rounded-2xl p-6 text-center border border-gray-100">
-                  <div className="text-3xl font-extrabold text-primary-600 mb-1">{stat.value}</div>
+                  <div className="text-3xl font-extrabold text-black mb-1">{stat.value}</div>
                   <div className="text-sm text-gray-500">{stat.label}</div>
                 </div>
               ))}
@@ -121,7 +121,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {team.map(member => (
               <div key={member.name} className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl font-bold shadow-lg">
+                <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xl font-bold shadow-lg">
                   {member.initial}
                 </div>
                 <h3 className="font-semibold text-gray-900 text-sm">{member.name}</h3>
@@ -136,13 +136,13 @@ export default function AboutPage() {
       <Testimonials />
 
       {/* CTA */}
-      <section className="bg-primary-600 text-white py-16">
+      <section className="bg-black text-white py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to simplify your everyday?</h2>
-          <p className="text-primary-200 mb-8">Browse our curated selection of practical, high-quality products.</p>
+          <p className="text-zinc-300 mb-8">Browse our curated selection of practical, high-quality products.</p>
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 bg-white text-primary-700 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-black font-bold px-8 py-4 rounded-xl hover:bg-zinc-100 transition-colors"
           >
             Shop All Products
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

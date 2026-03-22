@@ -72,7 +72,7 @@ export default function CartAbandonmentReminder() {
       className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-sm mx-4 animate-bounce-in"
     >
       <div className="bg-gray-900 text-white rounded-2xl shadow-2xl px-5 py-4 flex items-start gap-4">
-        <div className="flex-shrink-0 w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center">
+        <div className="flex-shrink-0 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
           </svg>
@@ -82,7 +82,7 @@ export default function CartAbandonmentReminder() {
           <Link
             href="/cart"
             onClick={dismiss}
-            className="inline-block mt-2 text-xs bg-primary-500 hover:bg-primary-400 text-white px-4 py-1.5 rounded-lg font-medium transition-colors"
+            className="inline-block mt-2 text-xs bg-white hover:bg-zinc-100 text-black px-4 py-1.5 rounded-lg font-medium transition-colors"
           >
             {t('cart.abandonmentBtn')}
           </Link>

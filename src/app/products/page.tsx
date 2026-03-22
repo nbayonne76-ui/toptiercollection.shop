@@ -59,8 +59,8 @@ export default function AllProductsPage() {
               onClick={() => setActiveCategory(cat.value)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activeCategory === cat.value
-                  ? 'bg-primary-600 text-white shadow-sm'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:border-primary-300 hover:text-primary-600'
+                  ? 'bg-black text-white shadow-sm'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-400 hover:text-black'
               }`}
             >
               {cat.label}
@@ -75,7 +75,7 @@ export default function AllProductsPage() {
               type="checkbox"
               checked={inStockOnly}
               onChange={e => setInStockOnly(e.target.checked)}
-              className="w-4 h-4 accent-primary-600 rounded"
+              className="w-4 h-4 accent-black rounded"
             />
             <span className="text-sm text-gray-700 font-medium">In Stock Only</span>
           </label>
@@ -86,7 +86,7 @@ export default function AllProductsPage() {
               id="sort"
               value={sort}
               onChange={e => setSort(e.target.value)}
-              className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white"
+              className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-black bg-white"
             >
               {SORT_OPTIONS.map(opt => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>

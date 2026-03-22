@@ -28,7 +28,7 @@ export default function LoginPage() {
   }
 
   const inputClass = (name: string) =>
-    `w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all ${
+    `w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black transition-all ${
       errors[name] ? 'border-red-400 bg-red-50' : 'border-gray-200 bg-white'
     }`
 
@@ -39,7 +39,7 @@ export default function LoginPage() {
           {/* Logo */}
           <div className="text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold">A</span>
               </div>
             </Link>
@@ -56,7 +56,7 @@ export default function LoginPage() {
               </div>
               <h2 className="text-xl font-bold text-gray-900 mb-2">Welcome back!</h2>
               <p className="text-gray-500 text-sm mb-6">You are now signed in.</p>
-              <Link href="/" className="bg-primary-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors">
+              <Link href="/" className="bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-zinc-800 transition-colors">
                 Go to Home
               </Link>
             </div>
@@ -83,7 +83,7 @@ export default function LoginPage() {
                   <label htmlFor="password" className="text-sm font-medium text-gray-700">
                     {t('auth.password')}
                   </label>
-                  <button type="button" className="text-xs text-primary-600 hover:text-primary-700">
+                  <button type="button" className="text-xs text-black hover:text-zinc-700">
                     {t('auth.forgotPassword')}
                   </button>
                 </div>
@@ -101,14 +101,14 @@ export default function LoginPage() {
 
               <button
                 type="submit"
-                className="w-full bg-primary-600 text-white font-semibold py-3.5 rounded-xl hover:bg-primary-700 transition-colors mt-2 text-base"
+                className="w-full bg-black text-white font-semibold py-3.5 rounded-xl hover:bg-zinc-800 transition-colors mt-2 text-base"
               >
                 {t('auth.loginBtn')}
               </button>
 
               <p className="text-center text-sm text-gray-500 mt-4">
                 {t('auth.noAccount')}{' '}
-                <Link href="/auth/signup" className="text-primary-600 font-semibold hover:text-primary-700">
+                <Link href="/auth/signup" className="text-black font-semibold hover:text-zinc-700">
                   {t('nav.signup')}
                 </Link>
               </p>

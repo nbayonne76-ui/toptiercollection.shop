@@ -83,17 +83,17 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 
         {/* Free shipping progress */}
         {totalPrice > 0 && (
-          <div className="px-6 py-3 bg-primary-50 border-b border-primary-100">
+          <div className="px-6 py-3 bg-gray-50 border-b border-gray-100">
             {remainingForFreeShipping > 0 ? (
-              <p className="text-xs text-primary-700">
+              <p className="text-xs text-gray-700">
                 Add <strong>${remainingForFreeShipping.toFixed(2)}</strong> more for free shipping!
               </p>
             ) : (
               <p className="text-xs text-green-700 font-medium">You qualify for free shipping!</p>
             )}
-            <div className="mt-1.5 h-1.5 bg-primary-200 rounded-full overflow-hidden">
+            <div className="mt-1.5 h-1.5 bg-gray-200 rounded-full overflow-hidden">
               <div
-                className="h-full bg-primary-600 rounded-full transition-all duration-500"
+                className="h-full bg-black rounded-full transition-all duration-500"
                 style={{ width: `${Math.min(100, (totalPrice / freeShippingThreshold) * 100)}%` }}
               />
             </div>
@@ -115,7 +115,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               </div>
               <button
                 onClick={onClose}
-                className="mt-2 bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors"
+                className="mt-2 bg-black text-white px-6 py-2 rounded-lg font-medium hover:bg-zinc-800 transition-colors"
               >
                 {t('cart.continueShopping')}
               </button>
@@ -135,14 +135,14 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-sm font-medium text-gray-900 truncate">{item.product.name}</h3>
-                    <p className="text-sm font-bold text-primary-600 mt-0.5">
+                    <p className="text-sm font-bold text-gray-900 mt-0.5">
                       ${item.product.price.toFixed(2)}
                     </p>
                     <div className="flex items-center gap-3 mt-2">
                       <div className="flex items-center border border-gray-200 rounded-lg">
                         <button
                           onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                          className="w-7 h-7 flex items-center justify-center text-gray-600 hover:text-primary-600 transition-colors"
+                          className="w-7 h-7 flex items-center justify-center text-gray-600 hover:text-black transition-colors"
                           aria-label="Decrease quantity"
                         >
                           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,7 +152,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                         <span className="w-8 text-center text-sm font-medium">{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                          className="w-7 h-7 flex items-center justify-center text-gray-600 hover:text-primary-600 transition-colors"
+                          className="w-7 h-7 flex items-center justify-center text-gray-600 hover:text-black transition-colors"
                           aria-label="Increase quantity"
                         >
                           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -195,13 +195,13 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
             <Link
               href="/cart"
               onClick={onClose}
-              className="block w-full bg-primary-600 text-white text-center py-3 rounded-xl font-semibold hover:bg-primary-700 transition-colors mt-2"
+              className="block w-full bg-black text-white text-center py-3 rounded-xl font-semibold hover:bg-zinc-800 transition-colors mt-2"
             >
               {t('cart.checkout')}
             </Link>
             <button
               onClick={onClose}
-              className="block w-full text-center text-sm text-gray-600 hover:text-primary-600 transition-colors py-1"
+              className="block w-full text-center text-sm text-gray-600 hover:text-black transition-colors py-1"
             >
               {t('cart.continueShopping')}
             </button>

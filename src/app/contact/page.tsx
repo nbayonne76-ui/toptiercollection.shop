@@ -58,10 +58,10 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-primary-700 to-indigo-600 text-white py-16">
+      <div className="bg-black text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-extrabold mb-3">{t('contact.title')}</h1>
-          <p className="text-primary-200 text-lg max-w-xl mx-auto">{t('contact.subtitle')}</p>
+          <p className="text-zinc-300 text-lg max-w-xl mx-auto">{t('contact.subtitle')}</p>
         </div>
       </div>
 
@@ -71,7 +71,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             {contactInfo.map(info => (
               <div key={info.label} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex gap-4">
-                <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gray-100 text-gray-700 rounded-xl flex items-center justify-center flex-shrink-0">
                   {info.icon}
                 </div>
                 <div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                   <a
                     key={social.label}
                     href={social.href}
-                    className="text-xs font-medium bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-700 px-3 py-1.5 rounded-full transition-colors"
+                    className="text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-black px-3 py-1.5 rounded-full transition-colors"
                   >
                     {social.label}
                   </a>
@@ -118,7 +118,7 @@ export default function ContactPage() {
             {faqs.map(faq => (
               <div key={faq.q} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
                 <h3 className="font-semibold text-gray-900 mb-2 flex items-start gap-2">
-                  <span className="text-primary-500 mt-0.5">Q.</span>
+                  <span className="text-gray-400 mt-0.5">Q.</span>
                   {faq.q}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed pl-5">{faq.a}</p>

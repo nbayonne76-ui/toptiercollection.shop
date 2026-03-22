@@ -46,7 +46,7 @@ export default function Navbar() {
         }`}
       >
         {/* Top bar */}
-        <div className="bg-primary-600 text-white text-xs text-center py-2 px-4">
+        <div className="bg-black text-white text-xs text-center py-2 px-4">
           {t('footer.freeShipping')}
         </div>
 
@@ -55,7 +55,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">A</span>
               </div>
               <span className="text-lg font-bold text-gray-900 hidden sm:block">
@@ -71,8 +71,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                     isActive(link.href)
-                      ? 'text-primary-600 bg-primary-50'
-                      : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                      ? 'text-black bg-gray-100 font-semibold'
+                      : 'text-gray-600 hover:text-black hover:bg-gray-50'
                   }`}
                 >
                   {link.label}
@@ -82,8 +82,8 @@ export default function Navbar() {
                 href="/about"
                 className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                   isActive('/about')
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'text-black bg-gray-100 font-semibold'
+                    : 'text-gray-600 hover:text-black hover:bg-gray-50'
                 }`}
               >
                 {t('nav.about')}
@@ -92,8 +92,8 @@ export default function Navbar() {
                 href="/contact"
                 className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                   isActive('/contact')
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'text-black bg-gray-100 font-semibold'
+                    : 'text-gray-600 hover:text-black hover:bg-gray-50'
                 }`}
               >
                 {t('nav.contact')}
@@ -110,13 +110,13 @@ export default function Navbar() {
               <div className="hidden md:flex items-center gap-2">
                 <Link
                   href="/auth/login"
-                  className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
+                  className="text-sm font-medium text-gray-600 hover:text-black transition-colors"
                 >
                   {t('nav.login')}
                 </Link>
                 <Link
                   href="/auth/signup"
-                  className="text-sm font-medium bg-primary-600 text-white px-3 py-1.5 rounded-lg hover:bg-primary-700 transition-colors"
+                  className="text-sm font-medium bg-black text-white px-3 py-1.5 rounded-lg hover:bg-zinc-800 transition-colors"
                 >
                   {t('nav.signup')}
                 </Link>
@@ -125,14 +125,14 @@ export default function Navbar() {
               {/* Cart button */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative p-2 text-gray-700 hover:text-primary-600 transition-colors"
+                className="relative p-2 text-gray-700 hover:text-black transition-colors"
                 aria-label="Open cart"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
                 {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-black text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                     {totalItems > 99 ? '99+' : totalItems}
                   </span>
                 )}
@@ -141,7 +141,7 @@ export default function Navbar() {
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-gray-700 hover:text-primary-600 transition-colors"
+                className="lg:hidden p-2 text-gray-700 hover:text-black transition-colors"
                 aria-label="Toggle mobile menu"
               >
                 {isMobileMenuOpen ? (
@@ -168,7 +168,7 @@ export default function Navbar() {
                   href={link.href}
                   className={`block px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
                     isActive(link.href)
-                      ? 'text-primary-600 bg-primary-50'
+                      ? 'text-black bg-gray-100 font-semibold'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >
@@ -183,10 +183,10 @@ export default function Navbar() {
               </Link>
               <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
                 <div className="flex gap-3">
-                  <Link href="/auth/login" className="text-sm font-medium text-primary-600">
+                  <Link href="/auth/login" className="text-sm font-medium text-black">
                     {t('nav.login')}
                   </Link>
-                  <Link href="/auth/signup" className="text-sm font-medium text-primary-600">
+                  <Link href="/auth/signup" className="text-sm font-medium text-black">
                     {t('nav.signup')}
                   </Link>
                 </div>

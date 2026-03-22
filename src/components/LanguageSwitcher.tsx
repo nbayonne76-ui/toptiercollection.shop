@@ -19,7 +19,7 @@ export default function LanguageSwitcher() {
             onClick={() => setLanguage(lang.code)}
             className={`text-xs font-semibold px-1.5 py-0.5 rounded-full transition-all ${
               language === lang.code
-                ? 'bg-primary-600 text-white'
+                ? 'bg-black text-white'
                 : 'text-gray-500 hover:text-gray-800'
             }`}
             aria-label={`Switch to ${lang.label}`}

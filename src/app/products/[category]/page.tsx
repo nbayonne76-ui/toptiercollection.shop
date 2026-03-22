@@ -90,7 +90,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               id="sort"
               value={sort}
               onChange={e => setSort(e.target.value)}
-              className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white"
+              className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-black bg-white"
             >
               <option value="featured">Featured</option>
               <option value="price-asc">Price: Low to High</option>
@@ -107,7 +107,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           <p className="text-gray-500 mb-4">Looking for something else?</p>
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 bg-primary-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors"
+            className="inline-flex items-center gap-2 bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-zinc-800 transition-colors"
           >
             {t('category.allProducts')}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

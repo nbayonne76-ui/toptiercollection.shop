@@ -30,7 +30,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/products"
-              className="text-sm font-semibold text-primary-600 hover:text-primary-700 flex items-center gap-1 transition-colors"
+              className="text-sm font-semibold text-black hover:text-zinc-700 flex items-center gap-1 transition-colors"
             >
               {t('category.browseAll')}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@ export default function HomePage() {
       </section>
 
       {/* Value Props Banner */}
-      <section className="bg-primary-600 text-white py-12">
+      <section className="bg-black text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -90,7 +90,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="font-bold mb-1">{item.title}</h3>
-                  <p className="text-primary-200 text-sm">{item.desc}</p>
+                  <p className="text-zinc-300 text-sm">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -117,11 +117,11 @@ export default function HomePage() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white"
+              className="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black bg-white"
             />
             <button
               type="submit"
-              className="bg-primary-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors whitespace-nowrap"
+              className="bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-zinc-800 transition-colors whitespace-nowrap"
             >
               Subscribe
             </button>

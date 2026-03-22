@@ -33,7 +33,7 @@ export default function CartPage() {
             <p className="text-gray-500 mb-8">{t('cart.emptyDesc')}</p>
             <Link
               href="/products"
-              className="bg-primary-600 text-white font-semibold px-8 py-3 rounded-xl hover:bg-primary-700 transition-colors"
+              className="bg-black text-white font-semibold px-8 py-3 rounded-xl hover:bg-zinc-800 transition-colors"
             >
               {t('cart.continueShopping')}
             </Link>
@@ -44,13 +44,13 @@ export default function CartPage() {
             <div className="lg:col-span-2 space-y-4">
               {/* Free shipping progress */}
               {remainingForFreeShipping > 0 && (
-                <div className="bg-primary-50 border border-primary-100 rounded-xl px-5 py-4">
-                  <p className="text-sm text-primary-700 mb-2">
+                <div className="bg-gray-50 border border-gray-200 rounded-xl px-5 py-4">
+                  <p className="text-sm text-gray-700 mb-2">
                     Add <strong>${remainingForFreeShipping.toFixed(2)}</strong> more for free shipping!
                   </p>
-                  <div className="h-2 bg-primary-200 rounded-full overflow-hidden">
+                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-primary-600 rounded-full transition-all"
+                      className="h-full bg-black rounded-full transition-all"
                       style={{ width: `${Math.min(100, (totalPrice / 50) * 100)}%` }}
                     />
                   </div>
@@ -90,7 +90,7 @@ export default function CartPage() {
                           <div className="flex items-center border border-gray-200 rounded-lg">
                             <button
                               onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                              className="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-primary-600 transition-colors"
+                              className="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-black transition-colors"
                             >
                               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
@@ -99,7 +99,7 @@ export default function CartPage() {
                             <span className="w-9 text-center text-sm font-semibold">{item.quantity}</span>
                             <button
                               onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                              className="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-primary-600 transition-colors"
+                              className="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-black transition-colors"
                             >
                               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -128,7 +128,7 @@ export default function CartPage() {
               <div className="flex justify-between items-center">
                 <Link
                   href="/products"
-                  className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1 transition-colors"
+                  className="text-sm text-black hover:text-zinc-700 font-medium flex items-center gap-1 transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -171,7 +171,7 @@ export default function CartPage() {
                   </div>
                 </div>
 
-                <button className="w-full bg-primary-600 text-white font-bold py-4 rounded-xl hover:bg-primary-700 transition-colors text-base shadow-lg hover:shadow-xl">
+                <button className="w-full bg-black text-white font-bold py-4 rounded-xl hover:bg-zinc-800 transition-colors text-base shadow-lg hover:shadow-xl">
                   {t('cart.checkout')}
                 </button>
 
@@ -190,9 +190,9 @@ export default function CartPage() {
                     <input
                       type="text"
                       placeholder="Enter code"
-                      className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+                      className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black"
                     />
-                    <button className="text-sm font-semibold text-primary-600 hover:text-primary-700 px-3 border border-primary-200 rounded-lg hover:bg-primary-50 transition-colors">
+                    <button className="text-sm font-semibold text-black hover:text-zinc-700 px-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
                       Apply
                     </button>
                   </div>

@@ -13,7 +13,7 @@ export default function ShippingPolicyPage() {
       cost: '$5.99 (Free over $50)',
       desc: 'Our most popular option. Orders are processed within 1 to 2 business days and delivered via USPS or UPS.',
       badge: 'Most Popular',
-      badgeColor: 'bg-primary-100 text-primary-700',
+      badgeColor: 'bg-gray-100 text-gray-700',
     },
     {
       name: 'Express Shipping',
@@ -42,11 +42,11 @@ export default function ShippingPolicyPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-br from-primary-700 to-indigo-600 text-white py-16">
+      <div className="bg-black text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-5xl mb-4">🚚</div>
           <h1 className="text-4xl font-extrabold mb-3">{t('shipping.title')}</h1>
-          <p className="text-primary-200 text-lg">
+          <p className="text-zinc-300 text-lg">
             Free standard shipping on all US orders over $50. Fast, reliable delivery to your door.
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function ShippingPolicyPage() {
                     {option.badge}
                   </span>
                 </div>
-                <div className="text-2xl font-extrabold text-primary-600 mb-1">{option.time}</div>
+                <div className="text-2xl font-extrabold text-black mb-1">{option.time}</div>
                 <div className="text-sm text-gray-500 mb-3">{option.cost}</div>
                 <p className="text-sm text-gray-600 leading-relaxed">{option.desc}</p>
               </div>
@@ -92,15 +92,15 @@ export default function ShippingPolicyPage() {
               <h3 className="font-semibold text-gray-900 mb-2">Processing Time</h3>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-500 mt-0.5">•</span>
+                  <span className="text-gray-400 mt-0.5">•</span>
                   Orders placed before 2 PM EST are processed the same business day.
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-500 mt-0.5">•</span>
+                  <span className="text-gray-400 mt-0.5">•</span>
                   Orders placed after 2 PM EST or on weekends/holidays are processed the next business day.
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-500 mt-0.5">•</span>
+                  <span className="text-gray-400 mt-0.5">•</span>
                   You will receive a shipping confirmation email with tracking information once your order ships.
                 </li>
               </ul>
@@ -109,15 +109,15 @@ export default function ShippingPolicyPage() {
               <h3 className="font-semibold text-gray-900 mb-2">Tracking Your Order</h3>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-500 mt-0.5">•</span>
+                  <span className="text-gray-400 mt-0.5">•</span>
                   All orders include tracking. Check your email for your tracking number.
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-500 mt-0.5">•</span>
+                  <span className="text-gray-400 mt-0.5">•</span>
                   It may take up to 24 hours for tracking information to update after shipping.
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary-500 mt-0.5">•</span>
+                  <span className="text-gray-400 mt-0.5">•</span>
                   Contact our support team if you haven't received your order within the estimated timeframe.
                 </li>
               </ul>
@@ -173,7 +173,7 @@ export default function ShippingPolicyPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-primary-600 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-primary-700 transition-colors text-sm"
+            className="inline-flex items-center gap-2 bg-black text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-zinc-800 transition-colors text-sm"
           >
             Contact Support
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

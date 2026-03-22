@@ -7,7 +7,7 @@ export default function Hero() {
   const { t } = useLanguage()
 
   return (
-    <section className="relative bg-gradient-to-br from-primary-700 via-primary-600 to-indigo-500 text-white overflow-hidden">
+    <section className="relative bg-black text-white overflow-hidden">
       {/* Decorative circles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full" />
@@ -29,7 +29,7 @@ export default function Hero() {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-primary-100 mb-8 leading-relaxed max-w-2xl">
+          <p className="text-lg sm:text-xl text-zinc-300 mb-8 leading-relaxed max-w-2xl">
             {t('hero.subheadline')}
           </p>
 
@@ -37,7 +37,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/products"
-              className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-bold px-8 py-4 rounded-xl text-base hover:bg-primary-50 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 bg-white text-black font-bold px-8 py-4 rounded-xl text-base hover:bg-zinc-100 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               {t('hero.cta')}
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,7 +62,7 @@ export default function Hero() {
             ].map(stat => (
               <div key={stat.label}>
                 <div className="text-2xl font-bold">{stat.value}</div>
-                <div className="text-xs text-primary-200 mt-0.5">{stat.label}</div>
+                <div className="text-xs text-zinc-400 mt-0.5">{stat.label}</div>
               </div>
             ))}
           </div>

@@ -58,10 +58,10 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Content */}
         <div className="p-4">
-          <p className="text-xs text-primary-600 font-medium mb-1 uppercase tracking-wide">
+          <p className="text-xs text-gray-500 font-medium mb-1 uppercase tracking-wide">
             {categoryLabels[product.category]}
           </p>
-          <h3 className="font-semibold text-gray-900 text-sm leading-snug mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors">
+          <h3 className="font-semibold text-gray-900 text-sm leading-snug mb-2 line-clamp-2 group-hover:text-black transition-colors">
             {product.name}
           </h3>
 
@@ -104,7 +104,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
               : added
               ? 'bg-green-500 text-white'
-              : 'bg-primary-600 text-white hover:bg-primary-700 hover:shadow-lg active:scale-95'
+              : 'bg-black text-white hover:bg-zinc-800 hover:shadow-lg active:scale-95'
           }`}
         >
           {!product.inStock

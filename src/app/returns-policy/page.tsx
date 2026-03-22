@@ -47,11 +47,11 @@ export default function ReturnsPolicyPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-br from-primary-700 to-indigo-600 text-white py-16">
+      <div className="bg-black text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-5xl mb-4">↩️</div>
           <h1 className="text-4xl font-extrabold mb-3">{t('returns.title')}</h1>
-          <p className="text-primary-200 text-lg max-w-2xl mx-auto">
+          <p className="text-zinc-300 text-lg max-w-2xl mx-auto">
             We want you to love every purchase. If you're not completely satisfied, we make returns easy.
           </p>
         </div>
@@ -59,10 +59,10 @@ export default function ReturnsPolicyPage() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
         {/* Main policy highlight */}
-        <div className="bg-primary-50 border border-primary-200 rounded-2xl p-8 text-center">
-          <div className="text-6xl font-black text-primary-600 mb-2">30</div>
-          <div className="text-2xl font-bold text-primary-800 mb-2">Day Return Window</div>
-          <p className="text-primary-700 text-sm max-w-lg mx-auto">{t('returns.policyText')}</p>
+        <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 text-center">
+          <div className="text-6xl font-black text-black mb-2">30</div>
+          <div className="text-2xl font-bold text-gray-900 mb-2">Day Return Window</div>
+          <p className="text-gray-700 text-sm max-w-lg mx-auto">{t('returns.policyText')}</p>
         </div>
 
         {/* Return process */}
@@ -75,7 +75,7 @@ export default function ReturnsPolicyPage() {
                   <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-200 z-0 -translate-y-1/2" />
                 )}
                 <div className="relative z-10 text-center">
-                  <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 shadow-lg">
+                  <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 shadow-lg">
                     {step.step}
                   </div>
                   <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
@@ -115,15 +115,15 @@ export default function ReturnsPolicyPage() {
           </p>
           <ol className="space-y-2 text-sm text-gray-700">
             <li className="flex items-start gap-2">
-              <span className="font-bold text-primary-600">1.</span>
+              <span className="font-bold text-black">1.</span>
               Contact our support team with your order number and the item you want to exchange.
             </li>
             <li className="flex items-start gap-2">
-              <span className="font-bold text-primary-600">2.</span>
+              <span className="font-bold text-black">2.</span>
               We'll confirm item availability and send you return instructions.
             </li>
             <li className="flex items-start gap-2">
-              <span className="font-bold text-primary-600">3.</span>
+              <span className="font-bold text-black">3.</span>
               Ship the original item back, and we'll send your replacement immediately.
             </li>
           </ol>
@@ -180,12 +180,12 @@ export default function ReturnsPolicyPage() {
         </div>
 
         {/* CTA */}
-        <div className="bg-primary-600 text-white rounded-2xl p-8 text-center">
+        <div className="bg-black text-white rounded-2xl p-8 text-center">
           <h2 className="text-xl font-bold mb-2">Need to Start a Return?</h2>
-          <p className="text-primary-200 text-sm mb-6">Our team is here to make it as easy as possible.</p>
+          <p className="text-zinc-300 text-sm mb-6">Our team is here to make it as easy as possible.</p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-white text-primary-700 font-bold px-6 py-3 rounded-xl hover:bg-primary-50 transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-black font-bold px-6 py-3 rounded-xl hover:bg-zinc-100 transition-colors"
           >
             Contact Support
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

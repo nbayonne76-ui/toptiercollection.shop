@@ -46,11 +46,11 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
-          <Link href="/" className="hover:text-primary-600 transition-colors">Home</Link>
+          <Link href="/" className="hover:text-black transition-colors">Home</Link>
           <span>/</span>
-          <Link href="/products" className="hover:text-primary-600 transition-colors">Products</Link>
+          <Link href="/products" className="hover:text-black transition-colors">Products</Link>
           <span>/</span>
-          <Link href={`/products/${product.category}`} className="hover:text-primary-600 transition-colors">
+          <Link href={`/products/${product.category}`} className="hover:text-black transition-colors">
             {categoryLabels[product.category]}
           </Link>
           <span>/</span>
@@ -81,7 +81,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
           {/* Details */}
           <div className="flex flex-col">
             {/* Category badge */}
-            <span className="inline-flex w-fit items-center bg-primary-50 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+            <span className="inline-flex w-fit items-center bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
               {categoryLabels[product.category]}
             </span>
 
@@ -167,7 +167,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                     ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                     : addedToCart
                     ? 'bg-green-500 text-white'
-                    : 'bg-primary-600 text-white hover:bg-primary-700 hover:shadow-lg'
+                    : 'bg-black text-white hover:bg-zinc-800 hover:shadow-lg'
                 }`}
               >
                 {addedToCart ? `✓ ${t('product.addedToCart')}` : t('product.addToCart')}
@@ -176,7 +176,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                 <Link
                   href="/cart"
                   onClick={handleBuyNow}
-                  className="flex-1 py-3.5 rounded-xl font-semibold text-base border-2 border-primary-600 text-primary-600 hover:bg-primary-50 transition-colors text-center"
+                  className="flex-1 py-3.5 rounded-xl font-semibold text-base border-2 border-black text-black hover:bg-gray-50 transition-colors text-center"
                 >
                   {t('product.buyNow')}
                 </Link>
@@ -220,7 +220,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                 onClick={() => setTab(t_tab)}
                 className={`pb-3 text-sm font-semibold border-b-2 transition-colors capitalize ${
                   tab === t_tab
-                    ? 'border-primary-600 text-primary-600'
+                    ? 'border-black text-black'
                     : 'border-transparent text-gray-500 hover:text-gray-800'
                 }`}
               >
@@ -241,8 +241,8 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             </div>
           ) : (
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 bg-primary-50 rounded-xl">
-                <div className="text-4xl font-bold text-primary-600">{product.rating}</div>
+              <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                <div className="text-4xl font-bold text-black">{product.rating}</div>
                 <div>
                   <div className="flex gap-0.5 mb-1">
                     {Array.from({ length: 5 }).map((_, i) => (

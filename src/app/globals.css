@@ -35,15 +35,15 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-primary-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-zinc-800 transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 border-2 border-primary-600 text-primary-600 font-semibold px-6 py-3 rounded-xl hover:bg-primary-50 transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 border-2 border-black text-black font-semibold px-6 py-3 rounded-xl hover:bg-gray-50 transition-colors duration-200;
   }
 
   .card {
-    @apply bg-white rounded-2xl border border-gray-100 shadow-sm;
+    @apply bg-white rounded-2xl border border-gray-200 shadow-sm;
   }
 }
 
@@ -73,14 +73,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f4f4f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c7d2fe;
+  background: #a1a1aa;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4f46e5;
+  background: #18181b;
 }
