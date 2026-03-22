@@ -12,6 +12,7 @@ export interface Product {
   image: string
   inStock: boolean
   tags: string[]
+  shopifyVariantId?: string
 }
 
 export interface CartItem {

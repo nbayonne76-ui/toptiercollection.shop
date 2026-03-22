@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { useCartStore } from '@/store/useCartStore'
 import { useLanguage } from '@/context/LanguageContext'
+import { buildShopifyCheckoutUrl } from '@/lib/shopify'
 
 interface CartDrawerProps {
   isOpen: boolean
@@ -192,13 +192,13 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               <span>{t('cart.total')}</span>
               <span>${(totalPrice + shippingCost).toFixed(2)}</span>
             </div>
-            <Link
-              href="/cart"
-              onClick={onClose}
+            <a
+              href={buildShopifyCheckoutUrl(items) || '#'}
+              onClick={!buildShopifyCheckoutUrl(items) ? (e) => { e.preventDefault(); alert('Products are not yet connected to Shopify. Please add products in your Shopify admin first.') } : onClose}
               className="block w-full bg-black text-white text-center py-3 rounded-xl font-semibold hover:bg-zinc-800 transition-colors mt-2"
             >
               {t('cart.checkout')}
-            </Link>
+            </a>
             <button
               onClick={onClose}
               className="block w-full text-center text-sm text-gray-600 hover:text-black transition-colors py-1"
