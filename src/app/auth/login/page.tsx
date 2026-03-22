@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
+import LogoBadge from '@/components/LogoBadge'
 
 export default function LoginPage() {
   const { t } = useLanguage()
@@ -39,9 +40,7 @@ export default function LoginPage() {
           {/* Logo */}
           <div className="text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold">A</span>
-              </div>
+              <LogoBadge className="h-12 w-auto" />
             </Link>
             <h1 className="text-2xl font-bold text-gray-900">{t('auth.loginTitle')}</h1>
             <p className="text-gray-500 text-sm mt-1">{t('auth.loginSubtitle')}</p>

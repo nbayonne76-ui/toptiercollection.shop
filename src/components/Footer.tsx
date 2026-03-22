@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
+import LogoBadge from './LogoBadge'
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -12,11 +13,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">A</span>
-              </div>
-              <span className="text-white font-bold text-lg">Abdallah Store</span>
+            <div className="flex items-center gap-3 mb-4">
+              <LogoBadge className="h-10 w-auto" />
+              <span className="text-white font-bold text-lg">Top Tier Collection</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
               {t('footer.tagline')}

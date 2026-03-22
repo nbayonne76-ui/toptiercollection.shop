@@ -41,7 +41,7 @@ export default function AboutPage() {
   ]
 
   const team = [
-    { name: 'Abdallah K.', role: 'Founder & CEO', initial: 'AK' },
+    { name: 'Founder & CEO', role: 'Top Tier Collection', initial: 'TT' },
     { name: 'Sophie L.', role: 'Head of Curation', initial: 'SL' },
     { name: 'Marcus T.', role: 'Customer Experience', initial: 'MT' },
     { name: 'Aisha M.', role: 'Operations Manager', initial: 'AM' },
@@ -69,7 +69,7 @@ export default function AboutPage() {
                 {t('about.storyText')}
               </p>
               <p className="text-gray-600 leading-relaxed text-base">
-                Today, Abdallah Store serves thousands of customers across North America, offering
+                Today, Top Tier Collection serves thousands of customers across North America, offering
                 over 24 carefully selected products across four core categories: Home Decor,
                 Kitchenware, Pet Products, and Beauty & Self-Care.
               </p>

@@ -6,11 +6,11 @@ import Footer from '@/components/Footer'
 import CartAbandonmentReminder from '@/components/CartAbandonmentReminder'
 
 export const metadata: Metadata = {
-  title: 'Abdallah Store: Simplifying Everyday Life',
-  description: 'Discover practical, high-quality products for your home, kitchen, pets, and self-care. Abdallah Store simplifies the life of the everyday consumer.',
+  title: 'Top Tier Collection: Simplifying Everyday Life',
+  description: 'Discover practical, high-quality products for your home, kitchen, pets, and self-care. Top Tier Collection simplifies the life of the everyday consumer.',
   keywords: ['home decor', 'kitchenware', 'pet products', 'beauty', 'self-care', 'online shopping'],
   openGraph: {
-    title: 'Abdallah Store',
+    title: 'Top Tier Collection',
     description: 'Simplifying the life of the everyday consumer.',
     type: 'website',
   },

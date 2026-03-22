@@ -10,7 +10,7 @@ export default function ReturnsPolicyPage() {
     {
       step: '01',
       title: 'Contact Us',
-      desc: 'Email support@abdallahstore.com or use the Contact form. Include your order number and reason for return.',
+      desc: 'Email support@toptiercollection.com or use the Contact form. Include your order number and reason for return.',
     },
     {
       step: '02',

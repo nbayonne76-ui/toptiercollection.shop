@@ -14,7 +14,7 @@ export default function ContactPage() {
         </svg>
       ),
       label: t('contact.emailLabel'),
-      value: 'support@abdallahstore.com',
+      value: 'support@toptiercollection.com',
     },
     {
       icon: (

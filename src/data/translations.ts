@@ -75,9 +75,9 @@ export const translations = {
     'auth.orContinue': 'Or continue with',
 
     // About
-    'about.title': 'About Abdallah Store',
+    'about.title': 'About Top Tier Collection',
     'about.mission': 'Our Mission',
-    'about.missionText': 'We believe that everyday life should be easier, more comfortable, and more enjoyable. Abdallah Store curates practical, high-quality products across home decor, kitchenware, pet care, and beauty, all designed to simplify your daily routine.',
+    'about.missionText': 'We believe that everyday life should be easier, more comfortable, and more enjoyable. Top Tier Collection curates practical, high-quality products across home decor, kitchenware, pet care, and beauty, all designed to simplify your daily routine.',
     'about.story': 'Our Story',
     'about.storyText': 'Founded with a simple idea: that the best products shouldn\'t be hard to find. We hand-pick every item in our catalog based on quality, practicality, and customer satisfaction, so you never have to waste time searching for things that just work.',
     'about.values': 'Our Values',
@@ -143,7 +143,7 @@ export const translations = {
     'footer.contact': 'Contact',
     'footer.shipping': 'Shipping Policy',
     'footer.returns': 'Returns & Exchanges',
-    'footer.copyright': '© 2025 Abdallah Store. All rights reserved.',
+    'footer.copyright': '© 2025 Top Tier Collection. All rights reserved.',
     'footer.freeShipping': 'Free shipping on orders over $50',
   },
   fr: {
@@ -222,9 +222,9 @@ export const translations = {
     'auth.orContinue': 'Ou continuer avec',
 
     // About
-    'about.title': 'À Propos d\'Abdallah Store',
+    'about.title': 'À Propos d\'Top Tier Collection',
     'about.mission': 'Notre Mission',
-    'about.missionText': 'Nous croyons que la vie quotidienne devrait être plus facile, plus confortable et plus agréable. Abdallah Store sélectionne des produits pratiques et de haute qualité pour la décoration, la cuisine, les animaux et les soins, tous conçus pour simplifier votre routine.',
+    'about.missionText': 'Nous croyons que la vie quotidienne devrait être plus facile, plus confortable et plus agréable. Top Tier Collection sélectionne des produits pratiques et de haute qualité pour la décoration, la cuisine, les animaux et les soins, tous conçus pour simplifier votre routine.',
     'about.story': 'Notre Histoire',
     'about.storyText': 'Fondé avec une idée simple : que les meilleurs produits ne devraient pas être difficiles à trouver. Nous sélectionnons chaque article de notre catalogue en fonction de la qualité, de la praticité et de la satisfaction client.',
     'about.values': 'Nos Valeurs',
@@ -290,7 +290,7 @@ export const translations = {
     'footer.contact': 'Contact',
     'footer.shipping': 'Politique de Livraison',
     'footer.returns': 'Retours & Échanges',
-    'footer.copyright': '© 2025 Abdallah Store. Tous droits réservés.',
+    'footer.copyright': '© 2025 Top Tier Collection. Tous droits réservés.',
     'footer.freeShipping': 'Livraison gratuite pour les commandes de plus de 50 $',
   },
 }

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
+import LogoBadge from '@/components/LogoBadge'
 
 export default function SignupPage() {
   const { t } = useLanguage()
@@ -52,9 +53,7 @@ export default function SignupPage() {
           {/* Logo */}
           <div className="text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold">A</span>
-              </div>
+              <LogoBadge className="h-12 w-auto" />
             </Link>
             <h1 className="text-2xl font-bold text-gray-900">{t('auth.signupTitle')}</h1>
             <p className="text-gray-500 text-sm mt-1">{t('auth.signupSubtitle')}</p>
@@ -68,7 +67,7 @@ export default function SignupPage() {
                 </svg>
               </div>
               <h2 className="text-xl font-bold text-gray-900 mb-2">Account Created!</h2>
-              <p className="text-gray-500 text-sm mb-6">Welcome to Abdallah Store, {form.name.split(' ')[0]}!</p>
+              <p className="text-gray-500 text-sm mb-6">Welcome to Top Tier Collection, {form.name.split(' ')[0]}!</p>
               <Link href="/" className="bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-zinc-800 transition-colors">
                 Start Shopping
               </Link>
