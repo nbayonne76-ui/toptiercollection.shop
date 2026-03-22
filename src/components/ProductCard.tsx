@@ -39,7 +39,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
           />
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-1.5">
@@ -57,16 +57,16 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Content */}
-        <div className="p-4">
-          <p className="text-xs text-gray-500 font-medium mb-1 uppercase tracking-wide">
+        <div className="p-2.5 sm:p-4">
+          <p className="text-xs text-gray-500 font-medium mb-0.5 uppercase tracking-wide hidden sm:block">
             {categoryLabels[product.category]}
           </p>
-          <h3 className="font-semibold text-gray-900 text-sm leading-snug mb-2 line-clamp-2 group-hover:text-black transition-colors">
+          <h3 className="font-semibold text-gray-900 text-xs sm:text-sm leading-snug mb-1.5 sm:mb-2 line-clamp-2 group-hover:text-black transition-colors">
             {product.name}
           </h3>
 
-          {/* Rating */}
-          <div className="flex items-center gap-1.5 mb-3">
+          {/* Rating — hidden on mobile to save space */}
+          <div className="hidden sm:flex items-center gap-1.5 mb-3">
             <div className="flex text-yellow-400">
               {Array.from({ length: 5 }).map((_, i) => (
                 <svg
@@ -85,21 +85,21 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
 
           {/* Price */}
-          <div className="flex items-center gap-2">
-            <span className="text-lg font-bold text-gray-900">${product.price.toFixed(2)}</span>
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <span className="text-sm sm:text-lg font-bold text-gray-900">${product.price.toFixed(2)}</span>
             {discount > 0 && (
-              <span className="text-sm text-gray-400 line-through">${product.originalPrice.toFixed(2)}</span>
+              <span className="text-xs sm:text-sm text-gray-400 line-through">${product.originalPrice.toFixed(2)}</span>
             )}
           </div>
         </div>
       </Link>
 
       {/* Add to cart button */}
-      <div className="px-4 pb-4">
+      <div className="px-2.5 pb-2.5 sm:px-4 sm:pb-4">
         <button
           onClick={handleAddToCart}
           disabled={!product.inStock}
-          className={`w-full py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+          className={`w-full py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
             !product.inStock
               ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
               : added

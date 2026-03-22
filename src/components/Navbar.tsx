@@ -55,9 +55,9 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-              <LogoBadge className="h-10 w-auto" />
-              <span className="text-lg font-bold text-gray-900 hidden sm:block">
+            <Link href="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+              <LogoBadge className="h-8 sm:h-10 w-auto" />
+              <span className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 hidden sm:block leading-tight">
                 Top Tier Collection
               </span>
             </Link>
@@ -160,12 +160,12 @@ export default function Navbar() {
         {/* Mobile menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-gray-100 bg-white shadow-lg">
-            <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
+            <div className="max-w-7xl mx-auto px-4 py-3 space-y-0.5">
               {categoryLinks.map(link => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                  className={`block px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
                     isActive(link.href)
                       ? 'text-black bg-gray-100 font-semibold'
                       : 'text-gray-700 hover:bg-gray-50'
@@ -174,18 +174,18 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link href="/about" className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg">
+              <Link href="/about" className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg">
                 {t('nav.about')}
               </Link>
-              <Link href="/contact" className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg">
+              <Link href="/contact" className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg">
                 {t('nav.contact')}
               </Link>
-              <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
+              <div className="pt-3 mt-2 border-t border-gray-100 flex items-center justify-between">
                 <div className="flex gap-3">
-                  <Link href="/auth/login" className="text-sm font-medium text-black">
+                  <Link href="/auth/login" className="text-sm font-semibold text-black px-4 py-2 border border-gray-200 rounded-lg">
                     {t('nav.login')}
                   </Link>
-                  <Link href="/auth/signup" className="text-sm font-medium text-black">
+                  <Link href="/auth/signup" className="text-sm font-semibold bg-black text-white px-4 py-2 rounded-lg">
                     {t('nav.signup')}
                   </Link>
                 </div>

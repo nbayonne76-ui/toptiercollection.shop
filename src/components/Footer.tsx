@@ -10,12 +10,12 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <LogoBadge className="h-10 w-auto" />
-              <span className="text-white font-bold text-lg">Top Tier Collection</span>
+          <div className="col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-2 sm:gap-3 mb-4">
+              <LogoBadge className="h-8 sm:h-10 w-auto" />
+              <span className="text-white font-bold text-base sm:text-lg">Top Tier Collection</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
               {t('footer.tagline')}
