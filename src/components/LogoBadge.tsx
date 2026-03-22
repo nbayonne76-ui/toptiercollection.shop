@@ -1,8 +1,16 @@
+'use client'
+
+import { useId } from 'react'
+
 interface LogoBadgeProps {
   className?: string
 }
 
 export default function LogoBadge({ className = 'h-9 w-auto' }: LogoBadgeProps) {
+  const id = useId().replace(/:/g, '')
+  const silverId = `silver-${id}`
+  const glareId = `glare-${id}`
+
   return (
     <svg
       viewBox="0 0 240 148"
@@ -11,14 +19,14 @@ export default function LogoBadge({ className = 'h-9 w-auto' }: LogoBadgeProps) 
       aria-label="Top Tier Collection logo"
     >
       <defs>
-        <linearGradient id="silver" x1="0%" y1="0%" x2="0%" y2="100%">
+        <linearGradient id={silverId} x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="#f0f0f0" />
           <stop offset="30%" stopColor="#d0d0d0" />
           <stop offset="50%" stopColor="#b8b8b8" />
           <stop offset="70%" stopColor="#d0d0d0" />
           <stop offset="100%" stopColor="#a8a8a8" />
         </linearGradient>
-        <linearGradient id="glare" x1="0%" y1="0%" x2="100%" y2="0%">
+        <linearGradient id={glareId} x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="white" stopOpacity="0" />
           <stop offset="40%" stopColor="white" stopOpacity="0.3" />
           <stop offset="60%" stopColor="white" stopOpacity="0.15" />
@@ -41,7 +49,7 @@ export default function LogoBadge({ className = 'h-9 w-auto' }: LogoBadgeProps) 
         strokeWidth="1.5"
       />
 
-      {/* TOP TIER text with glare */}
+      {/* TOP TIER text */}
       <text
         x="120"
         y="63"
@@ -54,11 +62,11 @@ export default function LogoBadge({ className = 'h-9 w-auto' }: LogoBadgeProps) 
       >
         TOP TIER
       </text>
-      {/* Subtle glare line over text */}
-      <rect x="30" y="38" width="180" height="12" fill="url(#glare)" opacity="0.5" />
+      {/* Glare line over text */}
+      <rect x="30" y="38" width="180" height="12" fill={`url(#${glareId})`} opacity="0.5" />
 
       {/* Silver pill bar */}
-      <rect x="52" y="71" width="136" height="24" rx="12" fill="url(#silver)" />
+      <rect x="52" y="71" width="136" height="24" rx="12" fill={`url(#${silverId})`} />
       {/* Stars inside bar */}
       <text
         x="120"
