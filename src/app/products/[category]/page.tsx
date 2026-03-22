@@ -1,0 +1,121 @@
+'use client'
+
+import { notFound } from 'next/navigation'
+import { useState } from 'react'
+import Link from 'next/link'
+import { getCategoryProducts, categoryLabels } from '@/data/products'
+import { Category } from '@/types'
+import ProductGrid from '@/components/ProductGrid'
+import { useLanguage } from '@/context/LanguageContext'
+
+const VALID_CATEGORIES: Category[] = ['home-decor', 'kitchenware', 'pet-products', 'beauty-self-care']
+
+const categoryMeta: Record<Category, { description: string; emoji: string; color: string }> = {
+  'home-decor': {
+    description: 'Transform your living space with beautiful, functional decor that feels like home.',
+    emoji: '🏠',
+    color: 'from-violet-600 to-purple-700',
+  },
+  'kitchenware': {
+    description: 'Elevate your cooking experience with professional-grade kitchen tools and cookware.',
+    emoji: '🍳',
+    color: 'from-emerald-600 to-green-700',
+  },
+  'pet-products': {
+    description: 'Give your furry family members the comfort and care they deserve.',
+    emoji: '🐾',
+    color: 'from-amber-600 to-orange-700',
+  },
+  'beauty-self-care': {
+    description: 'Invest in yourself with premium beauty and wellness products for daily rituals.',
+    emoji: '✨',
+    color: 'from-pink-600 to-rose-700',
+  },
+}
+
+interface CategoryPageProps {
+  params: { category: string }
+}
+
+export default function CategoryPage({ params }: CategoryPageProps) {
+  const { t } = useLanguage()
+  const [sort, setSort] = useState('featured')
+  const category = params.category as Category
+
+  if (!VALID_CATEGORIES.includes(category)) {
+    notFound()
+  }
+
+  const meta = categoryMeta[category]
+  const categoryLabel = categoryLabels[category]
+
+  let categoryProducts = getCategoryProducts(category)
+  if (sort === 'price-asc') categoryProducts = [...categoryProducts].sort((a, b) => a.price - b.price)
+  else if (sort === 'price-desc') categoryProducts = [...categoryProducts].sort((a, b) => b.price - a.price)
+  else if (sort === 'rating') categoryProducts = [...categoryProducts].sort((a, b) => b.rating - a.rating)
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Category Hero */}
+      <div className={`bg-gradient-to-br ${meta.color} text-white`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-sm text-white/70 mb-6">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/products" className="hover:text-white transition-colors">Products</Link>
+            <span>/</span>
+            <span className="text-white font-medium">{categoryLabel}</span>
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <span className="text-5xl">{meta.emoji}</span>
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-extrabold mb-2">{categoryLabel}</h1>
+              <p className="text-white/80 max-w-xl">{meta.description}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Toolbar */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 p-4 bg-white rounded-xl border border-gray-100">
+          <p className="text-sm text-gray-600">
+            Showing <strong>{categoryProducts.length}</strong> products in {categoryLabel}
+          </p>
+          <div className="flex items-center gap-2">
+            <label htmlFor="sort" className="text-sm text-gray-600 whitespace-nowrap">Sort by:</label>
+            <select
+              id="sort"
+              value={sort}
+              onChange={e => setSort(e.target.value)}
+              className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white"
+            >
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <ProductGrid products={categoryProducts} />
+
+        {/* Browse other categories */}
+        <div className="mt-16 text-center">
+          <p className="text-gray-500 mb-4">Looking for something else?</p>
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-2 bg-primary-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors"
+          >
+            {t('category.allProducts')}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
