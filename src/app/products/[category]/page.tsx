@@ -14,22 +14,22 @@ const categoryMeta: Record<Category, { description: string; emoji: string; color
   'home-decor': {
     description: 'Transform your living space with beautiful, functional decor that feels like home.',
     emoji: '🏠',
-    color: 'from-violet-600 to-purple-700',
+    color: 'from-gray-800 to-black',
   },
   'kitchenware': {
     description: 'Elevate your cooking experience with professional-grade kitchen tools and cookware.',
     emoji: '🍳',
-    color: 'from-emerald-600 to-green-700',
+    color: 'from-gray-800 to-black',
   },
   'pet-products': {
     description: 'Give your furry family members the comfort and care they deserve.',
     emoji: '🐾',
-    color: 'from-amber-600 to-orange-700',
+    color: 'from-gray-800 to-black',
   },
   'beauty-self-care': {
     description: 'Invest in yourself with premium beauty and wellness products for daily rituals.',
     emoji: '✨',
-    color: 'from-pink-600 to-rose-700',
+    color: 'from-gray-800 to-black',
   },
 }
 
@@ -100,7 +100,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </div>
         </div>
 
-        <ProductGrid products={categoryProducts} />
+        <ProductGrid products={categoryProducts} emptyMessage="Products coming soon — check back shortly!" />
 
         {/* Browse other categories */}
         <div className="mt-16 text-center">
