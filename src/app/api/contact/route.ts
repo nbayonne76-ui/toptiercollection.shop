@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: 'Top Tier Collection <onboarding@resend.dev>',
       to: 'support@toptier-collection.com',
-      reply_to: email,
+      replyTo: email,
       subject: `[${subject}] New message from ${name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
