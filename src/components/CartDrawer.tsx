@@ -35,7 +35,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
     }
   }, [isOpen, onClose])
 
-  const freeShippingThreshold = 50
+  const freeShippingThreshold = 150
   const remainingForFreeShipping = Math.max(0, freeShippingThreshold - totalPrice)
   const shippingCost = totalPrice >= freeShippingThreshold ? 0 : 5.99
 

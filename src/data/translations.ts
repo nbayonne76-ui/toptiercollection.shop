@@ -49,7 +49,7 @@ export const translations = {
     'cart.checkout': 'Proceed to Checkout',
     'cart.subtotal': 'Subtotal',
     'cart.shipping': 'Shipping',
-    'cart.freeShipping': 'Free shipping on orders over $50',
+    'cart.freeShipping': 'Free shipping on orders over $150',
     'cart.total': 'Total',
     'cart.remove': 'Remove',
     'cart.quantity': 'Qty',
@@ -113,7 +113,7 @@ export const translations = {
     // Shipping Policy
     'shipping.title': 'Shipping Policy',
     'shipping.free': 'Free Shipping',
-    'shipping.freeText': 'We offer free standard shipping on all orders over $50 within the contiguous United States.',
+    'shipping.freeText': 'We offer free standard shipping on all orders over $150 worldwide.',
     'shipping.standard': 'Standard Shipping',
     'shipping.standardTime': '5 to 7 Business Days',
     'shipping.express': 'Express Shipping',
@@ -144,7 +144,7 @@ export const translations = {
     'footer.shipping': 'Shipping Policy',
     'footer.returns': 'Returns & Exchanges',
     'footer.copyright': '© 2025 Top Tier Collection. All rights reserved.',
-    'footer.freeShipping': 'Free shipping on orders over $50',
+    'footer.freeShipping': 'Free shipping on orders over $150',
   },
   fr: {
     // Navigation

@@ -198,7 +198,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             <div className="mt-6 pt-6 border-t border-gray-100 grid grid-cols-2 gap-3">
               {[
                 { icon: '🔒', text: 'Secure Checkout' },
-                { icon: '🚚', text: 'Free shipping over $50' },
+                { icon: '🚚', text: 'Free shipping over $150' },
                 { icon: '↩️', text: '30-day returns' },
                 { icon: '⭐', text: 'Top rated product' },
               ].map(badge => (

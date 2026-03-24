@@ -63,7 +63,7 @@ export default function HomePage() {
                   </svg>
                 ),
                 title: 'Free Shipping',
-                desc: 'On all orders over $50',
+                desc: 'On all orders over $150',
               },
               {
                 icon: (
