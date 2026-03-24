@@ -199,7 +199,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
               {[
                 { icon: '🔒', text: 'Secure Checkout' },
                 { icon: '🚚', text: 'Free shipping over $150' },
-                { icon: '↩️', text: '30-day returns' },
+                { icon: '↩️', text: '14-day returns' },
                 { icon: '⭐', text: 'Top rated product' },
               ].map(badge => (
                 <div key={badge.text} className="flex items-center gap-2 text-xs text-gray-600">
@@ -236,7 +236,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                 <li>High-quality materials selected for durability</li>
                 <li>Designed for everyday use, practical and stylish</li>
                 <li>Ships in protective packaging to ensure safe delivery</li>
-                <li>Backed by our 30-day return policy</li>
+                <li>Backed by our 14-day return policy</li>
               </ul>
             </div>
           ) : (

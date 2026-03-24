@@ -124,7 +124,7 @@ export const translations = {
     // Returns Policy
     'returns.title': 'Returns & Exchanges',
     'returns.policy': '30-Day Return Policy',
-    'returns.policyText': 'We want you to love every purchase. If you\'re not completely satisfied, you can return most items within 30 days of delivery.',
+    'returns.policyText': 'We want you to love every purchase. If you\'re not completely satisfied, you can return most items within 14 days of delivery.',
     'returns.process': 'Return Process',
     'returns.exceptions': 'Exceptions',
     'returns.exchange': 'Exchanges',

@@ -81,7 +81,7 @@ export default function AboutPage() {
                 { value: '10,000+', label: 'Happy Customers' },
                 { value: '4.8 ★', label: 'Average Rating' },
                 { value: '24', label: 'Curated Products' },
-                { value: '30 days', label: 'Return Policy' },
+                { value: '14 days', label: 'Return Policy' },
               ].map(stat => (
                 <div key={stat.label} className="bg-gray-50 rounded-2xl p-6 text-center border border-gray-100">
                   <div className="text-3xl font-extrabold text-black mb-1">{stat.value}</div>

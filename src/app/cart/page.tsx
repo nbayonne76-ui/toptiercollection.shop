@@ -176,7 +176,7 @@ export default function CartPage() {
                 </button>
 
                 <div className="mt-5 space-y-2">
-                  {['🔒 Secure checkout', '↩️ 30-day easy returns', '📦 Ships in 1-2 business days'].map(badge => (
+                  {['🔒 Secure checkout', '↩️ 14-day easy returns', '📦 Ships in 1-2 business days'].map(badge => (
                     <p key={badge} className="text-xs text-gray-500 flex items-center gap-2">
                       {badge}
                     </p>
