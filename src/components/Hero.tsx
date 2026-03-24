@@ -56,9 +56,9 @@ export default function Hero() {
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-6 sm:gap-8 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/20">
             {[
               { value: '10,000+', label: 'Happy Customers' },
-              { value: '24 Products', label: 'Curated Items' },
               { value: '4.8★', label: 'Average Rating' },
-              { value: '30-Day', label: 'Easy Returns' },
+              { value: '14-Day', label: 'Easy Returns' },
+              { value: 'Free', label: 'Shipping over $150' },
             ].map(stat => (
               <div key={stat.label}>
                 <div className="text-xl sm:text-2xl font-bold">{stat.value}</div>
