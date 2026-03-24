@@ -71,7 +71,7 @@ export default function AboutPage() {
               <p className="text-gray-600 leading-relaxed text-base">
                 Today, Top Tier Collection serves thousands of customers across North America, offering
                 over 24 carefully selected products across four core categories: Home Decor,
-                Kitchenware, Pet Products, and Beauty & Self-Care.
+                Kitchenware, Pet Products, and Beauty & Self Care.
               </p>
             </div>
 

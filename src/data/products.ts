@@ -18,5 +18,5 @@ export const categoryLabels: Record<string, string> = {
   'home-decor': 'Home Decor',
   'kitchenware': 'Kitchenware',
   'pet-products': 'Pet Products',
-  'beauty-self-care': 'Beauty & Self-Care',
+  'beauty-self-care': 'Beauty & Self Care',
 }
