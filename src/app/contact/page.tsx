@@ -6,48 +6,18 @@ import ContactForm from '@/components/ContactForm'
 export default function ContactPage() {
   const { t } = useLanguage()
 
-  const contactInfo = [
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      ),
-      label: t('contact.emailLabel'),
-      value: 'support@toptiercollection.com',
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-      ),
-      label: t('contact.phone'),
-      value: '+1 (888) 555-0192',
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      label: t('contact.hours'),
-      value: t('contact.hoursText'),
-    },
-  ]
-
   const faqs = [
     {
       q: 'How long does shipping take?',
-      a: 'Standard shipping takes 5 to 7 business days. Express shipping is available for 2 to 3 business days.',
+      a: 'Orders are processed the same or next business day. International delivery times vary by destination.',
     },
     {
       q: 'What is your return policy?',
-      a: 'We offer a 30-day hassle-free return policy. Items must be unused and in original packaging.',
+      a: 'We offer a 14-day return window. Items must be unused and in original packaging. Request an RMA to start the process.',
     },
     {
       q: 'Do you ship internationally?',
-      a: 'Yes! We ship to over 30 countries. International shipping rates and times vary by destination.',
+      a: 'Yes! We ship worldwide. Free shipping on all orders over $150.',
     },
     {
       q: 'How can I track my order?',
@@ -69,17 +39,31 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Contact info */}
           <div className="space-y-6">
-            {contactInfo.map(info => (
-              <div key={info.label} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex gap-4">
-                <div className="w-12 h-12 bg-gray-100 text-gray-700 rounded-xl flex items-center justify-center flex-shrink-0">
-                  {info.icon}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 text-sm mb-1">{info.label}</h3>
-                  <p className="text-sm text-gray-600 whitespace-pre-line">{info.value}</p>
-                </div>
+            {/* Email */}
+            <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex gap-4">
+              <div className="w-12 h-12 bg-gray-100 text-gray-700 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </div>
-            ))}
+              <div>
+                <h3 className="font-semibold text-gray-900 text-sm mb-1">{t('contact.emailLabel')}</h3>
+                <p className="text-sm text-gray-600">support@toptier-collection.com</p>
+              </div>
+            </div>
+
+            {/* Support hours */}
+            <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex gap-4">
+              <div className="w-12 h-12 bg-gray-100 text-gray-700 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 text-sm mb-1">{t('contact.hours')}</h3>
+                <p className="text-sm text-gray-600">All requests receive a response within 24hrs, excluding weekends and holidays.</p>
+              </div>
+            </div>
 
             {/* Social links */}
             <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">

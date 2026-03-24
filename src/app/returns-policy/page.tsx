@@ -9,30 +9,30 @@ export default function ReturnsPolicyPage() {
   const returnSteps = [
     {
       step: '01',
-      title: 'Contact Us',
-      desc: 'Email support@toptiercollection.com or use the Contact form. Include your order number and reason for return.',
+      title: 'Request RMA',
+      desc: 'Request an RMA (Return Merchandise Authorization) within the 14-day return period by contacting our support team.',
     },
     {
       step: '02',
-      title: 'Get Return Label',
-      desc: 'We\'ll email you a prepaid return shipping label within 1 business day of approving your request.',
+      title: 'Wait for Authorization',
+      desc: 'Wait for your RMA authorization to be emailed to you within 48 hours.',
     },
     {
       step: '03',
       title: 'Pack & Ship',
-      desc: 'Pack the item(s) securely in their original packaging. Attach the label and drop it at any USPS location.',
+      desc: 'Pack and ship your item within 48 hours of receiving the return authorization.',
     },
     {
       step: '04',
       title: 'Refund Issued',
-      desc: 'Once we receive and inspect the return, your refund is processed within 3 to 5 business days to your original payment method.',
+      desc: 'Refund issued to your original payment method within 7 to 10 business days of product return and inspection.',
     },
   ]
 
   const conditions = [
     'Item must be in its original, unused condition',
     'Must include all original packaging and accessories',
-    'Must be returned within 30 days of the delivery date',
+    'Must be returned within 14 days of the delivery date',
     'Proof of purchase (order number or receipt) is required',
   ]
 
@@ -60,9 +60,11 @@ export default function ReturnsPolicyPage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
         {/* Main policy highlight */}
         <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 text-center">
-          <div className="text-6xl font-black text-black mb-2">30</div>
+          <div className="text-6xl font-black text-black mb-2">14</div>
           <div className="text-2xl font-bold text-gray-900 mb-2">Day Return Window</div>
-          <p className="text-gray-700 text-sm max-w-lg mx-auto">{t('returns.policyText')}</p>
+          <p className="text-gray-700 text-sm max-w-lg mx-auto">
+            You have 14 days from the date of delivery to request a return. Items must be unused and in original packaging.
+          </p>
         </div>
 
         {/* Return process */}
@@ -106,38 +108,10 @@ export default function ReturnsPolicyPage() {
           </ul>
         </div>
 
-        {/* Exchanges */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('returns.exchange')}</h2>
-          <p className="text-gray-600 text-sm leading-relaxed mb-4">
-            We offer product exchanges for items of equal or lesser value within the 30-day return window.
-            To initiate an exchange:
-          </p>
-          <ol className="space-y-2 text-sm text-gray-700">
-            <li className="flex items-start gap-2">
-              <span className="font-bold text-black">1.</span>
-              Contact our support team with your order number and the item you want to exchange.
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="font-bold text-black">2.</span>
-              We'll confirm item availability and send you return instructions.
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="font-bold text-black">3.</span>
-              Ship the original item back, and we'll send your replacement immediately.
-            </li>
-          </ol>
-          <p className="text-xs text-gray-400 mt-4">
-            If the exchange item costs more, you'll be charged the difference. If it costs less, we'll refund the difference.
-          </p>
-        </div>
-
         {/* Exceptions */}
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('returns.exceptions')}</h2>
-          <p className="text-gray-600 text-sm mb-5">
-            The following items are non-returnable:
-          </p>
+          <p className="text-gray-600 text-sm mb-5">The following items are non-returnable:</p>
           <div className="overflow-hidden rounded-xl border border-gray-100">
             <table className="w-full text-sm">
               <thead className="bg-gray-50">
@@ -165,7 +139,7 @@ export default function ReturnsPolicyPage() {
             {[
               { phase: 'Return Received', time: '1 to 2 days', icon: '📦' },
               { phase: 'Inspection Complete', time: '1 to 2 days', icon: '🔍' },
-              { phase: 'Refund Processed', time: '3 to 5 business days', icon: '💳' },
+              { phase: 'Refund Processed', time: '7 to 10 business days', icon: '💳' },
             ].map(phase => (
               <div key={phase.phase} className="text-center bg-gray-50 rounded-xl p-5">
                 <div className="text-3xl mb-2">{phase.icon}</div>
@@ -194,7 +168,7 @@ export default function ReturnsPolicyPage() {
           </Link>
         </div>
 
-        <p className="text-xs text-gray-400 text-center">Last updated: March 2025. Policy subject to change without notice.</p>
+        <p className="text-xs text-gray-400 text-center">Last updated: March 2026. Policy subject to change without notice.</p>
       </div>
     </div>
   )
