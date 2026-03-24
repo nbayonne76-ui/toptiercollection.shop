@@ -91,7 +91,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             <div className="w-8 h-8 border-2 border-black border-t-transparent rounded-full animate-spin" />
           </div>
         ) : (
-          <ProductGrid products={sorted} emptyMessage="Products coming soon — check back shortly!" />
+          <ProductGrid products={sorted} emptyMessage="Products coming soon, check back shortly!" />
         )}
 
         <div className="mt-16 text-center">

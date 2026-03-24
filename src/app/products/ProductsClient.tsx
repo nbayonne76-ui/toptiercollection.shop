@@ -91,7 +91,7 @@ export default function ProductsClient({ initialProducts }: Props) {
           </div>
         </div>
 
-        <ProductGrid products={filtered} emptyMessage="Products coming soon — check back shortly!" />
+        <ProductGrid products={filtered} emptyMessage="Products coming soon, check back shortly!" />
       </div>
     </div>
   )
