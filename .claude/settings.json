@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "happi-brain": {
+      "source": {
+        "source": "github",
+        "repo": "nbayonne76-ui/Happi-brain"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "happi@happi-brain": true
+  }
+}
