@@ -49,5 +49,6 @@ Aucune CI GitHub Actions : les seuls checks sont les déploiements Vercel.
 - `/auth/login` et `/auth/signup` sont des maquettes : validation locale, aucun appel serveur.
 - Sanity est du code mort : `src/lib/sanity.ts`, `src/lib/queries.ts`, `sanity/` et `studio/` ne sont
   importés par aucune page.
-- `/api/contact` envoie par Resend depuis l'expéditeur partagé `resend.dev`, et interpole les champs
-  du visiteur dans le HTML **sans échappement**. Toute évolution de cette route doit échapper ces valeurs.
+- `/api/contact` envoie par Resend depuis l'expéditeur partagé `resend.dev`. Les champs du visiteur
+  sont validés (chaînes non vides, longueur bornée, email) et **échappés** avant d'entrer dans le HTML
+  de l'email ; sujet et `replyTo` sont ramenés sur une ligne. Garder `escapeHtml` sur tout nouveau champ.
